@@ -78,6 +78,7 @@ class MainActivity : AppCompatActivity() {
         val correctTranslation = translations[currentWord]
         if (translation.equals(correctTranslation, ignoreCase = true)) {
             score += 10
+            words.remove(currentWord) // Usunięcie przetłumaczonego słowa z listy
         } else {
             score -= 5
             words.remove(currentWord)
@@ -85,6 +86,7 @@ class MainActivity : AppCompatActivity() {
 
         updateUI()
     }
+
 
 
     private fun handleKnownOption() {
